@@ -48,8 +48,10 @@ public class ProjetoTreino_SistemaControleBancario {
         Gerente ger2 = new Gerente("Empréstimo",1000,5,"Garcia","666666666","666@666",43,"6666666666");
         ger2.exibirDados();
         
-        //Engenheiro(String projeto, String sexo, double altura, double peso, 
-        //String nome, String fone, String email, double idade, String cpf)
+        /*
+        Engenheiro(String projeto, String sexo, double altura, double peso, 
+        String nome, String fone, String email, double idade, String cpf)
+        */
         Engenheiro eng0 = new Engenheiro("Novo Andar","F",1.65,65.2,"Ferreira","777777777","777@777",30,"77777777777");
         eng0.exibirDados();
         

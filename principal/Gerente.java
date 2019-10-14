@@ -17,7 +17,7 @@ public class Gerente extends Pessoa {
     public Gerente(String setor, double salario, int qtdadePessoasGerencia, String nome, String fone, String email, double idade, String cpf) {
         super(nome, fone, email, idade, cpf);
         this.setor = setor;
-        this.salario = salario;
+        this.salario = abonoSalario(salario);
         this.qtdadePessoasGerencia = qtdadePessoasGerencia;
     }
 
@@ -35,23 +35,8 @@ public class Gerente extends Pessoa {
     }
 
     public void setSalario(double salario) {
-        /**
-         * se a quantidade de pessoas gerenciadas for superior a 10, atribuir um
-         * aumento de 10% sobre o salário.
-         */
-        if (this.getQtdadePessoasGerencia() > 10) {
-            this.salario += salario * 0.10;
-        
-        }
-          /**
-          * se o setor gerenciado for compras, atribuir um aumento de 5% sobre o
-          * salário.
-          */
-        else if (this.getSetor().compareToIgnoreCase("compras") == 0) {
-            this.salario += salario * 0.05;
-        }
-        else
-            this.salario = salario;
+       this.salario = abonoSalario(salario);
+       
     }
 
     public int getQtdadePessoasGerencia() {
@@ -85,7 +70,25 @@ public class Gerente extends Pessoa {
         this.emailEquipe();
         
     }
-   
+       public double abonoSalario(double salario) {
+        /**
+         * se a quantidade de pessoas gerenciadas for superior a 10, atribuir um
+         * aumento de 10% sobre o salário.
+         */
+        if (this.getQtdadePessoasGerencia() > 10) {
+            this.salario += salario * 0.10;
+        
+        }
+          /**
+          * se o setor gerenciado for compras, atribuir um aumento de 5% sobre o
+          * salário.
+          */
+        else if (this.getSetor().compareToIgnoreCase("compras") == 0) {
+            this.salario += salario * 0.05;
+        } else 
+            this.salario = salario;
+        return this.salario;
+    }
     //MÉTODO ESPECIAL
     public void emailEquipe(){
         System.out.println("=====================================");

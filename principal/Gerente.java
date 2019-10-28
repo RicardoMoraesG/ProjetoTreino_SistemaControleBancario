@@ -54,20 +54,20 @@ public class Gerente extends Pessoa {
          * para acesso das subclasses
          */           
         System.out.println("\nGerente, setor: " + this.getSetor() + " Qt. Pessoas " +this.getQtdadePessoasGerencia());
-        System.out.println("Salário R$ " + this.getSalario());
-        System.out.print("Nome: " + this.getNome() );
+        System.out.println("\tSalário R$ " + this.getSalario());
+        System.out.print("\tNome: " + this.getNome() );
         System.out.println(", Idade: " + this.getIdade() );
-        System.out.print("Fone: " + this.getFone() );
+        System.out.print("\tFone: " + this.getFone() );
         System.out.println(", Email: " + this.getEmail() );
-        System.out.print("CPF: " + this.getCpf());
+
         /**
          * Testa a validação do cpf na exibição de dados
          */
         if (this.validarCpf(this.getCpf()) ){
-            System.out.println(" Válido!");
+            System.out.println("\tCPF: " + this.getCpf());
         }else
-            System.out.println(" Inválido! **digite 11 números**");
-        this.emailEquipe();
+            System.out.println("\tCPF Inválido! **digite 11 números**");
+        
         
     }
        public double abonoSalario(double salario) {
@@ -90,12 +90,13 @@ public class Gerente extends Pessoa {
         return this.salario;
     }
     //MÉTODO ESPECIAL
-    public void emailEquipe(){
-        System.out.println("=====================================");
-        System.out.println("    email para equipe " + this.getSetor());
-        System.out.println("    Assunto: Abono " +this.getSalario() * 0.10);
-        System.out.println("    Email enviado para " + this.getQtdadePessoasGerencia()+" pessoas.");
-        System.out.println("=====================================");
+    public void emailEquipe(String assunto){
+      
+        System.out.println("\t=====================================");
+        System.out.println("\temail para equipe " + this.getSetor());
+        System.out.println("\tAssunto:  " +assunto);
+        System.out.println("\tEmail enviado para " + this.getQtdadePessoasGerencia()+" pessoas.");
+        System.out.println("\t=====================================");
     }
     
     

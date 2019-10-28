@@ -5,14 +5,18 @@
  */
 package modelo.principal;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Usuario
  */
-public class Presidente extends Pessoa {
+public class Presidente extends Pessoa implements I_Autenticacao {
     private String indicacao;
     private int anoNascimento;
+    private final int senha = 123456;
 
+    Scanner entrada = new Scanner(System.in);
     public Presidente(String indicacao, int anoNascimento, String nome, String fone, String email, double idade, String cpf) {
         super(nome, fone, email, idade, cpf);
         this.indicacao = indicacao;
@@ -43,25 +47,38 @@ public class Presidente extends Pessoa {
          * para acesso das subclasses
          */ 
         System.out.println("\nPresidente, Indicação: " + this.getIndicacao() + " Nascimento: " + this.getAnoNascimento());
-        System.out.print("Nome: " + this.getNome() );
+        System.out.print("\tNome: " + this.getNome() );
         System.out.println(", Idade: " + this.getIdade() );
-        System.out.print("Fone: " + this.getFone() );
+        System.out.print("\tFone: " + this.getFone() );
         System.out.println(", Email: " + this.getEmail() );
-        System.out.print("CPF: " + this.getCpf());
         /**
          * Testa a validação do cpf na exibição de dados
          */
         if (this.validarCpf(this.getCpf()) ){
-            System.out.println(" Válido!");
+            System.out.println("\tCPF: " + this.getCpf());
         }else
-            System.out.println(" Inválido! **digite 11 números**");
+            System.out.println("\tCPF Inválido! **digite 11 números**");
         
     }       
     //MÉTODO ESPECIAL
     public void comunicado(String comunicado){
         
-        System.out.println("====COMUNICADO DA PRESIDENCIA====");
-        System.out.println("    " +comunicado);
-        System.out.println("=================================\n");
+        System.out.println("\t====COMUNICADO DA PRESIDENCIA====");
+        System.out.println("\t\t    " +comunicado);
+        System.out.println("\t=================================\n");
+    }
+
+    @Override
+    public boolean autenticar(int s) {
+        return (s == this.senha);
+    }
+    @Override
+    public void acessarContas(){
+        /*System.out.println("ACESSAR TODAS AS CONTAS ");
+        if ( this.autenticar(entrada.nextInt() ){
+            System.out.println("Acesso liberado!");
+        } else {
+            System.out.println("Senha incorreta: Acesso negado");
+        }*/
     }
 }

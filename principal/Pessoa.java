@@ -7,7 +7,7 @@ package modelo.principal;
  *
  * @author Usuario
  */
-public /* abstract*/ class  Pessoa {
+public abstract class  Pessoa {
     private String nome;
     private String fone;
     private String email;
@@ -85,14 +85,14 @@ public /* abstract*/ class  Pessoa {
         System.out.println(", Idade: " + this.getIdade() );
         System.out.print("Fone: " + this.getFone() );
         System.out.println(", Email: " + this.getEmail() );
-        System.out.print("CPF: " + this.getCpf());
+        
         /**
          * Testa a validação do cpf na exibição de dados
          */
         if (this.validarCpf(this.getCpf()) ){
-            System.out.println(" Válido!");
+            System.out.println("\tCPF: " + this.getCpf());
         }else
-            System.out.println(" Inválido! **digite 11 números**");
+            System.out.println("\tCPF Inválido! **digite 11 números**");
         
     }
       

@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class Diretor extends Pessoa implements I_Autenticacao {
     private int anoCargo;
     private String situacao;
-    private final int senha = 789321;
+    private final int senha = 987654;
 
     Scanner entrada = new Scanner(System.in);
     public Diretor(int anoCargo, String situacao, String nome, String fone, String email, double idade, String cpf) {
@@ -33,7 +33,7 @@ public class Diretor extends Pessoa implements I_Autenticacao {
     public void setSituacao(String situacao) {
         this.situacao = situacao;
     }
-        public void exibirDados(){
+    public String exibirDados(){
         /**
          * Opção por utilizar os getters  
          * dispensa a reescrita de código
@@ -51,6 +51,7 @@ public class Diretor extends Pessoa implements I_Autenticacao {
             System.out.println("\tCPF: " + this.getCpf());
         }else
             System.out.println("\tCPF Inválido! **digite 11 números**");
+        return "";
     }
         
     //MÉTODO ESPECIAL
@@ -66,18 +67,14 @@ public class Diretor extends Pessoa implements I_Autenticacao {
             System.out.println("\tLucro de R$ " + lucro + " Cumpriu " + lucro/1000000*100 + "%");
     }
 
-    @Override
-    public boolean autenticar(int s) {
-        return (s == this.senha);
-    }
-        
+       //Conceito de Polimorfismo.
         @Override
-    public void acessarContas(){
-        /*System.out.println("ACESSAR TODAS AS CONTAS ");
-        if ( autenticar(123456) ){
+    public void acessarContas(int s){
+        System.out.println("ACESSAR TODAS AS CONTAS "); 
+        if (senha == s){
             System.out.println("Acesso liberado!");
         } else {
             System.out.println("Senha incorreta: Acesso negado");
-        }*/
+        }
     }
 }

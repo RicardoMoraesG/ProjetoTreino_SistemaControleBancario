@@ -1,5 +1,8 @@
 /**
- * 
+ * Item 1.
+ *  Conceito de Classe Abstrata.
+ *  Conceito de Super Classe.
+ * Item 2: todas as Subclasses.
  */
 package modelo.principal;
 
@@ -75,7 +78,7 @@ public abstract class  Pessoa {
         return this.getCpf().length() == 11; 
    }
     
-    public void exibirDados(){
+    public String exibirDados(){
         /**
          * Opção por utilizar os getters  
          * dispensa a reescrita de código
@@ -93,7 +96,7 @@ public abstract class  Pessoa {
             System.out.println("\tCPF: " + this.getCpf());
         }else
             System.out.println("\tCPF Inválido! **digite 11 números**");
-        
+        return "";
     }
       
 }

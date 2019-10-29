@@ -13,72 +13,89 @@ public class ProjetoTreino_SistemaControleBancario {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        /**
-         * Instancia os objetos de todas as classes.
-         */
         Scanner entrada = new Scanner(System.in);
-        Presidente pres[] = new Presidente[2];
-        //Presidente(String indicacao, int anoNascimento, String nome, String fone, String email, double idade, String cpf) 
-        pres[0] = new Presidente("xxx",1964,"Gonçalves","1111111111", "aaa@override", 55, "12345678910");
-        pres[0].exibirDados();
-        pres[0].comunicado("Meta Atingida!");
-        pres[1] = new Presidente("yyy", 1979, "Silva","222222222", "bbb@override", 50, "0132165498");
-        pres[1].exibirDados();
-        pres[1].comunicado("Reunião ");
-        Diretor dir[] = new Diretor[2];
-        //Diretor(int anoCargo, String situacao, String nome, String fone, String email, double idade, String cpf)
-        dir[0] = new Diretor(2018, "ativo","Ramos", "333333333", "ccc@override", 53, "45612378912");
-        dir[0].exibirDados();
-        dir[0].metaDeLucro(500000);
-        dir[1] = new Diretor(2016, "inativo", "Vieira", "444444444", "ddd@override", 45, "987321654");
-        dir[1].exibirDados();
-        dir[1].metaDeLucro(1000000);
-        //Gerente(String setor, double salario, int qtdadePessoasGerencia, 
-        //String nome, String fone, String email, double idade, String cpf)
-        Gerente ger0 = new Gerente("Compras", 10000, 15, "Lopes", "555555555", "eee@override", 38, "55555555555");
-        ger0.exibirDados();
-        ger0.emailEquipe("Novo horário de atendimento");
-        Gerente ger1 = new Gerente("Compras",1000,5,"Garcia","666666666","fff@override",43,"6666666666");
-        ger1.exibirDados();
-        ger1.emailEquipe("Cancela novo horário de atendimento");
-        Gerente ger2 = new Gerente("Empréstimo",1000,5,"Andrade","77777777","ggg@override",43,"7777777777");
-        ger2.exibirDados();
-        ger2.emailEquipe("Reafirma novo horário de atendimento");
-        /*
-        Engenheiro(String projeto, String sexo, double altura, double peso, 
-        String nome, String fone, String email, double idade, String cpf)
-        */
-        Engenheiro eng0 = new Engenheiro("Novo Andar","f",1.65,65.2,"Ferreira","777777777","fff@override",30,"77777777777");
-        eng0.exibirDados();
         
+        //Instancia os objetos de todas as classes. 
+        //P(String indicacao, int anoNascimento, String nome, String fone, String email, double idade, String cpf)
+        Presidente obj1 = new Presidente("X",1970, "Stark","(11)11111-1111","aaa@override.com",49,"98765432111");
+        Presidente obj2 = new Presidente("W", 1965, "Baratheon", "(22)22222-2222","bbb@override.com", 54,"98745632112");
+        //D(int anoCargo, String situacao, String nome, String fone, String email, double idade, String cpf)
+        Diretor obj3 = new Diretor(2015,"Ativo","Lannister", "(11)33333-3333","ccc@override.com", 62, "987456321");
+        Diretor obj4 = new Diretor(2012,"Ativo","Targaryen","(22)44444-4444","ddd@override.com", 57, "98765413215");
+        //G(String setor, double salario, int qtdadePessoasGerencia, String nome, String fone, String email, double idade, String cpf)
+        Gerente obj5 = new Gerente("Compras",5378.20,20,"Mormont", "(11)55555-5555","eee@override.com",38,"98745654532");
+        Gerente obj6 = new Gerente("Segurança",4800,15,"Conceição","(11)66555-6656","fff@override.com", 36,"9876547865");
+        //E(String projeto, String sexo, double altura, double peso, String nome, String fone, String email, double idade, String cpf)
+        Engenheiro obj7 = new Engenheiro("Novo Andar", "F", 1.71, 68.5, "Igritte","(22)77766-7677","ggg@override.com", 29, "98775847692");
+        Engenheiro obj8 = new Engenheiro("Cofre", "Masculino", 1.83, 106.5,"Hodor","(11)88568-8878","hhh@override.com", 33,"9887763214");
         
-        /**
-         * Cria uma lista tipada da classe Pessoa.
-         */
+        //item 9.
+        Gerente obj9 = new Gerente("Compras",5378.20,20,"Mormont", "(11)55555-5555","eee@override.com",38,"33333333333");
+        Gerente obj10 = new Gerente("Compras",5378.20,20,"Mormont", "(11)55555-5555","eee@override.com",38,"77777777777");
         
-        ArrayList<Pessoa> ListaFuncionarios = new ArrayList<>();
-        ListaFuncionarios.add(eng0);
-        ListaFuncionarios.add(ger0);
-        ListaFuncionarios.add(ger1);
-        ListaFuncionarios.add(ger2);
-        ListaFuncionarios.add(dir[0]);
-        ListaFuncionarios.add(dir[1]);
-        ListaFuncionarios.add(pres[0]);
-        ListaFuncionarios.add(pres[1]);
-        /**
-         * Exibe a lista tipada da classe Pessoa
-         * através de um loop(for).
-         */
-        System.out.println("\n============BANCO OVERRIDE==================");
-        System.out.println("\tLista Completa de Funcionários\n");
-        for (int i = 0; i < ListaFuncionarios.size(); i++) {
-            System.out.println("\t" + ListaFuncionarios.get(i).getNome().toUpperCase()
-                    + " Email: " + ListaFuncionarios.get(i).getEmail().toLowerCase() );
-        }
-        System.out.println("=============================================");
+        //item 7.
+        //Adiciona os objetos instanciados em uma lista tipada.
+        ArrayList<Pessoa> listaFuncionarios = new ArrayList<Pessoa>();
+       listaFuncionarios.add(obj1);
+       listaFuncionarios.add(obj2);
+       listaFuncionarios.add(obj3);
+       listaFuncionarios.add(obj4);
+       listaFuncionarios.add(obj5);
+       listaFuncionarios.add(obj6);
+       listaFuncionarios.add(obj7);
+       listaFuncionarios.add(obj8);
+       
+       //item 9.
+       listaFuncionarios.add(obj9);
+       listaFuncionarios.add(obj10);
+       
+       //item 8.
+       //Pesquisa um nome e a posição em que está na lista.
+        System.out.println("Pesquisa Funcionário no sistema:");
+        System.out.println("Digite o nome: \t");
+        //String funcionario = entrada.next();
+        String funcionario = "Mormont";
+        boolean encontrado = false;
+       for (int i = 0; i < listaFuncionarios.size(); i++) {
+           if ( listaFuncionarios.get(i).getNome().contentEquals(funcionario) ) {
+               encontrado = true;
+               System.out.print("Funcionário: " + listaFuncionarios.get(i).getNome());
+               System.out.println(" - Posição da lista: " + (1+i) );
+           }
+        }//fim for.
+       if (!encontrado){
+               System.out.println("Nome não consta na lista.");
+       }
+       for (int j = 0; j < listaFuncionarios.size(); j++ ) {
+           System.out.println("" + listaFuncionarios.get(j).exibirDados());
+       }
+       //Métodos Especiais:
+        System.out.println("============Métodos Especiais=======================");
+        System.out.println("====================================================");
+      
+        System.out.println("\n"+obj1.getClass());
+        System.out.println("\tAcessar contas: ");obj1.acessarContas(123456);
+        System.out.println("\tComunicado: ");obj1.comunicado("O norte se lembra!");
+                
+        System.out.println("\n"+obj2.getClass());
+        System.out.println("\tAcessar contas: ");obj2.acessarContas(456123);
+        System.out.println("\tComunicado: ");obj2.comunicado("Promovido ao Banco de Braavos!");
+                
+        System.out.println("\n"+obj3.getClass());
+        obj3.acessarContas(123452);
         
+        System.out.println("\n"+obj4.getClass());
+        obj4.acessarContas(123456);
         
+        System.out.println("\n"+obj5.getClass());
+        System.out.println("\tAbono" +obj5.abonoSalario(1));
+        obj5.emailEquipe("\tOverride sempre paga suas dívidas!");
         
+        System.out.println("\n"+obj6.getClass());
+        System.out.println("\tAbono" +obj6.abonoSalario(5));
+        obj6.emailEquipe("\tHodor");
+     
+       
     }//FIM CODIGO PRINCIPAL
     
 }

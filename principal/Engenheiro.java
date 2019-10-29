@@ -16,7 +16,7 @@ public class Engenheiro extends Pessoa {
     private double peso;
     private double imc;
     private String resultadoIMC;
-    private final String tipoEngenheiro = "Civil";
+    private final String tipoEngenheiro = "Civil";//item 6: ATRIBUTO PADRÃO.
 
     public Engenheiro(String projeto, String sexo, double altura, double peso, String nome, String fone, String email, double idade, String cpf) {
         super(nome, fone, email, idade, cpf);
@@ -69,11 +69,11 @@ public class Engenheiro extends Pessoa {
     * Indice de Massa Corporal: peso/altura²
     * @return imc
     */
-    public double calculaIMC() {
+    public double calculaIMC() {//item 4
         this.imc = this.getPeso() / (this.getAltura()*this.getAltura());
         return this.imc;
     }
-    
+    //item 4.
     public String resultIMC() {
         this.calculaIMC();
         if ( ( this.sexo.equalsIgnoreCase("F") ) || ( this.sexo.equalsIgnoreCase("FEMININO") ) ) {
@@ -105,9 +105,9 @@ public class Engenheiro extends Pessoa {
                 "\n\tResultado do IMC " + this.getResultadoIMC() +
                 "\n\t====================================";
     }
-
+    //Conceito de Polimorfismo.
     @Override
-    public void exibirDados(){
+    public String exibirDados(){
         System.out.print("Engenheiro");
         System.out.println(", Sexo: " + this.getSexo() + " Altura: " + this.getAltura() + " Peso: " + this.getPeso());
         System.out.print("\tNome: " + this.getNome() );
@@ -123,7 +123,7 @@ public class Engenheiro extends Pessoa {
         System.out.println("\t== Projeto: " + this.getProjeto() + " ==");
         System.out.printf("" + this.resultIMC());
 
-        
+        return "";
     }
 
 

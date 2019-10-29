@@ -40,7 +40,7 @@ public class Presidente extends Pessoa implements I_Autenticacao {
     }
     //METODOS SOBREESCRITOS
     @Override
-    public void exibirDados(){
+    public String exibirDados(){
         /**
          * Opção por utilizar os getters  
          * dispensa a reescrita de código
@@ -58,7 +58,7 @@ public class Presidente extends Pessoa implements I_Autenticacao {
             System.out.println("\tCPF: " + this.getCpf());
         }else
             System.out.println("\tCPF Inválido! **digite 11 números**");
-        
+       return ""; 
     }       
     //MÉTODO ESPECIAL
     public void comunicado(String comunicado){
@@ -68,17 +68,14 @@ public class Presidente extends Pessoa implements I_Autenticacao {
         System.out.println("\t=================================\n");
     }
 
+       //Conceito de Polimorfismo.
     @Override
-    public boolean autenticar(int s) {
-        return (s == this.senha);
-    }
-    @Override
-    public void acessarContas(){
-        /*System.out.println("ACESSAR TODAS AS CONTAS ");
-        if ( this.autenticar(entrada.nextInt() ){
+    public void acessarContas(int s){
+        System.out.println("ACESSAR TODAS AS CONTAS "); 
+        if (senha == s){
             System.out.println("Acesso liberado!");
         } else {
             System.out.println("Senha incorreta: Acesso negado");
-        }*/
+        }
     }
 }

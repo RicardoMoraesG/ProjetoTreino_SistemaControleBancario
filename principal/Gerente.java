@@ -47,7 +47,7 @@ public class Gerente extends Pessoa {
         this.qtdadePessoasGerencia = qtdadePessoasGerencia;
     }
     @Override
-        public void exibirDados(){
+        public String exibirDados(){
         /**
          * Opção por utilizar os getters  
          * dispensa a reescrita de código
@@ -68,12 +68,13 @@ public class Gerente extends Pessoa {
         }else
             System.out.println("\tCPF Inválido! **digite 11 números**");
         
-        
+        return "";
     }
        public double abonoSalario(double salario) {
         /**
          * se a quantidade de pessoas gerenciadas for superior a 10, atribuir um
          * aumento de 10% sobre o salário.
+         * item 3.1.
          */
         if (this.getQtdadePessoasGerencia() > 10) {
             this.salario += salario * 0.10;
@@ -82,6 +83,7 @@ public class Gerente extends Pessoa {
           /**
           * se o setor gerenciado for compras, atribuir um aumento de 5% sobre o
           * salário.
+          * item 3.2 e 3.3(else if).
           */
         else if (this.getSetor().compareToIgnoreCase("compras") == 0) {
             this.salario += salario * 0.05;
